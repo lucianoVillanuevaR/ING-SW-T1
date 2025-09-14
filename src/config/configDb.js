@@ -4,13 +4,13 @@ import { DATABASE, DB_USERNAME, HOST, PASSWORD, DB_PORT } from "./configEnv.js";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: `${HOST}`,
-  port: DB_PORT,
-  username: `${DB_USERNAME}`,
-  password: `${PASSWORD}`,
-  database: `${DATABASE}`,
+  host: HOST,                
+  port: Number(DB_PORT),      
+  username: DB_USERNAME,    
+  password: PASSWORD,          
+  database: DATABASE,         
   entities: ["src/entities/**/*.js"],
-  synchronize: true, 
+  synchronize: true,
   logging: false,
 });
 
@@ -23,3 +23,9 @@ export async function connectDB() {
     process.exit(1);
   }
 }
+
+
+
+
+
+
