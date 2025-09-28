@@ -1,9 +1,9 @@
 "use strict";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ override: true });
 
-export const HOST = process.env.DB_HOST || process.env.HOST || "localhost";
+export const HOST = process.env.DB_HOST;
 export const PORT = process.env.PORT || 3000;
 export const DB_PORT = process.env.DB_PORT || 5432;
 export const DB_USERNAME = process.env.DB_USERNAME;
