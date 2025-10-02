@@ -1,7 +1,5 @@
 import Joi from 'joi';
-
 const validacion = Joi.string().trim().min(1).max(100);
-
 //para el usuario
 const crearUsuarioSchema = Joi.object({
     nombre: validacion.required().messages({
@@ -23,7 +21,6 @@ const crearUsuarioSchema = Joi.object({
         'string.empty': 'La contrasena no puede estar vacía'
     })
 });
-
 const validacionMiddleware = (schema) => {
     return (req, res, next) => {
         const { error, value } = schema.validate(req.body);
